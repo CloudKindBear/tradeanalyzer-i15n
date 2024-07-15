@@ -5,9 +5,14 @@ import pandas as pd
 
 class DataProcessing:
     
-    def __init__(self, datafile, ftype='csv'):
+    def __init__(self, datafile, ftype='csv', dont_make_df=False):
         self.fl = datafile
 
+        if not dont_make_df:
+            self.make_dataframe(ftype)
+
+
+    def make_dataframe(self, ftype):
         ## Check that used supported format of file
         ## For process file of some selected format, we should use some sutable function
         ## of pandas software framework;
